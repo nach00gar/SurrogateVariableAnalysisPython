@@ -1,8 +1,11 @@
 import pandas as pd
 import numpy as np
-from scipy.linalg import solve, eigh, eig
+from scipy.linalg import solve, eigh, eig, svd
 from scipy.stats import mode
 from scipy.stats import f
+from scipy.interpolate import UnivariateSpline
+from statsmodels.nonparametric.kde import KDEUnivariate
+
 
 def batchEffectRemoval(expressionMatrix, labels):
     if len(np.unique(labels)) == 2:
